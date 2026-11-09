@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>SÉANCE - Arcade Phantasm</title>
+    <link rel="stylesheet" href="site/style.css">
+</head>
+
+<body>
+    <canvas id="game" width="960" height="540"></canvas>
+    <div id="splash">
+        <h1 class="title">SÉANCE</h1>
+        <p class="tag">An Arcade Phantasm game</p>
+        <p class="blurb">Run. Rewind. Your past selves rise as ghosts and repeat every move you made.</p>
+        <img class="cursed-logo" src="images/cursed-logo.png" alt="Cursed Entertainment">
+        <p class="copyright">&copy; Cursed Entertainment 2026</p>
+        <p class="press">Press any key or tap to start</p>
+    </div>
+    <div id="touch">
+        <div class="pad left">
+            <button data-k="left" aria-label="Left">&#9664;</button>
+            <button data-k="right" aria-label="Right">&#9654;</button>
+        </div>
+        <div class="pad right">
+            <button data-k="retry" class="small" aria-label="Try again">T</button>
+            <button data-k="summon" class="small" aria-label="Summon">R</button>
+            <button data-k="pause" class="small" aria-label="Pause">P</button>
+            <button data-k="jump" aria-label="Jump">&#9650;</button>
+        </div>
+    </div>
+    <script src="site/sfx.js"></script>
+    <script src="site/game.js"></script>
+</body>
+
+</html>
