@@ -32,7 +32,7 @@ A side-view platformer where you summon your own past. Run a dangerous room, the
 ## Versions
 
 - **Browser**: this one, right here at the repo root. [Play it](https://cursedprograms.github.io/Seance/).
-- **Windows exe**: coming, in `cpp/`.
+- **Windows exe**: in `cpp/`: download `Seance-win64.zip` from the [latest release](https://github.com/CursedPrograms/Seance/releases/latest), unzip, run `Seance.exe`. See [Windows exe](#windows-exe) below.
 - **Android**: in `android/`, the APK in [`android/apk/`](android/apk/). See [Android](#android) below.
 
 ## How to play
@@ -73,6 +73,19 @@ Your best time for each room is saved in the browser, and the game picks up at t
 On a phone: the arrow and jump buttons at the bottom, plus R (summon), T (try again) and P (pause).
 
 The physics runs at a fixed 60 steps a second, so every ghost repeats its run exactly.
+
+## Windows exe
+
+C++17 with SDL2, OpenGL 3, [Dear ImGui](https://github.com/ocornut/imgui) and [stb](https://github.com/nothings/stb).
+The same game as the browser one: the same nine rooms, the same fixed 60-step physics (so ghosts replay exactly), the
+Ouija board, the candles, the sound effects (made as it plays, no audio files) and the Georgia lettering. Arrows / A D
+move, Up / W / Space / Z jump, R summon, T retry, X banish, [ ] or PgUp / PgDn room, P pause, M mute, F11 fullscreen,
+Esc menu. Solved rooms and best times are kept in your user settings folder.
+
+To build it: Visual Studio 2022 (C++) and CMake, then `cpp/build.bat` (or `build.ps1`; `build.sh` on Linux with
+SDL2 installed). It fetches SDL2 once into `cpp/external/`, builds `cpp/build/Release/Seance.exe` and packs
+`cpp/dist/Seance-win64.zip`. The code: `cpp/src/main.cpp` (window, splash), `game.cpp` (rooms, physics, drawing),
+`canvas.cpp` (a small canvas-like drawing layer over ImGui), `synth.cpp` (the sound effects).
 
 ## Android
 
