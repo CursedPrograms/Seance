@@ -33,7 +33,7 @@ A side-view platformer where you summon your own past. Run a dangerous room, the
 
 - **Browser**: this one, right here at the repo root. [Play it](https://cursedprograms.github.io/Seance/).
 - **Windows exe**: coming, in `cpp/`.
-- **Android**: coming, in `android/`.
+- **Android**: in `android/`, the APK in [`android/apk/`](android/apk/). See [Android](#android) below.
 
 ## How to play
 
@@ -73,6 +73,19 @@ Your best time for each room is saved in the browser, and the game picks up at t
 On a phone: the arrow and jump buttons at the bottom, plus R (summon), T (try again) and P (pause).
 
 The physics runs at a fixed 60 steps a second, so every ghost repeats its run exactly.
+
+## Android
+
+The browser game in an Android app: it plays offline, full screen in landscape, with the sound on from the start
+(Android 7.0 or newer).
+
+- **Download**: the APK in [`android/apk/`](android/apk/). Copy it to the phone and open it (allow installs from
+  unknown sources when asked).
+- **Build it**: the Android SDK and JDK 17, then `android/build.bat` (or `build.ps1`, `build.sh`). It runs
+  `gradlew assembleDebug` and leaves the APK in `android/apk/`. The game's web files are copied into the app at build
+  time, so the browser game at the repo root stays the only copy.
+- **The code**: `android/app/src/main/java/com/synthwomb/seance/MainActivity.kt`, a full-screen WebView that serves the
+  game from the app's assets. Press Back twice to leave.
 
 ## Files
 
